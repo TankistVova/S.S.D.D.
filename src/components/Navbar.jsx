@@ -16,10 +16,10 @@ const Navbar = () => {
       </button>
 
       <ul className={`menu ${menuOpen ? 'active' : ''}`}>
-        <li><a href="#">Главная</a></li>
-        <li><a href="#">Записаться к врачу</a></li>
-        <li><a href="#">Каталог</a></li>
-        <li><a href="#">Мои тесты</a></li>
+        <li><a href="/">Главная</a></li>
+        <li><a href="/doctor">Записаться к врачу</a></li>
+        <li><a href="/catalog">Каталог</a></li>
+        <li><a href="/tests">Мои тесты</a></li>
       </ul>
 
       <div className="language">
