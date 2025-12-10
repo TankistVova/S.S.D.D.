@@ -1,26 +1,32 @@
-/* Navbar.css */
 .navbar {
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
-  border-bottom: 2px solid #6CC5C0; /* Blue border as in the image */
-  background-color: #ffffff;
-  font-family: Arial, sans-serif;
+  padding: 15px 40px;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  font-weight: bold;
-  color: #6CC5C0; /* Dark blue text */
+  gap: 10px;
+  font-weight: 600;
+  color: #2C3E50;
+  font-size: 16px;
 }
 
 .logo img {
-  margin-right: 10px;
-  margin-left: 150px;
-  height: 100px;
-  max-width: 100%;
+  height: 40px;
+  width: auto;
 }
 
 .menu {
@@ -28,76 +34,100 @@
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-.menu li {
-  margin: 0 15px;
+  gap: 30px;
 }
 
 .menu a {
   text-decoration: none;
-  color: #333333;
-  font-size: 16px;
+  color: #2C3E50;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
 .menu a:hover {
-  color: #6CC5C0;
+  color: #30BACB;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .language {
   display: flex;
   align-items: center;
-  color: #333333;
-  font-size: 16px;
+  color: #2C3E50;
+  font-size: 14px;
   cursor: pointer;
-  
 }
 
 .dropdown-arrow {
   margin-left: 5px;
-  font-size: 12px;
+  font-size: 10px;
 }
 
-.profile-button {
-  background-color: #6CC5C0;
-  color: #ffffff;
+.login-button {
+  background: transparent;
+  color: #30BACB;
   border: none;
-  padding: 8px 15px;
-  border-radius: 5px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
   cursor: pointer;
-  font-size: 16px;
+  transition: all 0.3s;
 }
 
-.profile-button:hover {
-  background-color: #008cc1;
+.login-button:hover {
+  background: #f0f9ff;
 }
 
-/* Mobile Menu */
+.register-button {
+  background: #30BACB;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.register-button:hover {
+  background: #2a9fb0;
+}
+
 .menu-toggle {
   display: none;
   background: none;
   border: none;
   font-size: 24px;
   cursor: pointer;
-  color: #333;
+  color: #2C3E50;
 }
 
 @media (max-width: 768px) {
-  .navbar {
-    flex-wrap: wrap;
-    padding: 10px 15px;
+  .navbar-container {
+    padding: 15px 20px;
   }
 
-  .logo img {
-    margin-left: 0;
-    height: 60px;
+  .logo span {
+    display: none;
   }
 
   .menu {
     display: none;
-    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
     flex-direction: column;
-    margin-top: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   }
 
   .menu.active {
@@ -106,19 +136,18 @@
 
   .menu li {
     margin: 10px 0;
-    text-align: center;
   }
 
   .menu-toggle {
     display: block;
   }
 
-  .language,
-  .profile-button {
-    font-size: 14px;
+  .navbar-right {
+    gap: 10px;
   }
 
-  .profile-button {
-    padding: 6px 12px;
+  .register-button {
+    padding: 8px 15px;
+    font-size: 12px;
   }
 }
