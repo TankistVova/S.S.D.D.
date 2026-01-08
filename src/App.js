@@ -1,19 +1,32 @@
 import './App.css';
 import Header from './components/Navbar';
-import icon1 from './asset/icon1.png'
-import icon2 from './asset/icon2.png'
-import icon3 from './asset/icon3.png'
-import icon11 from './asset/icon11.png'
-import icon12 from './asset/icon12.png'
-import icon13 from './asset/icon13.png'
-import icon14 from './asset/icon14.png'
-import icon21 from './asset/icon21.png'
-import icon22 from './asset/icon22.png'
-import icon23 from './asset/icon23.png'
-import icon24 from './asset/icon24.png'
-import phoneImg from './asset/phone.jpg'
-import phoneImg1 from './asset/phone1.png'
+import Footer from './components/Footer';
+import icon1 from './asset/icons/icon-medkit.png'
+import icon2 from './asset/icons/icon-personal.png'
+import icon3 from './asset/icons/icon-document.png'
+import checkIcon from './asset/icons/check.png'
+import plusIcon from './asset/icons/plus.png'
+import stat247 from './asset/icons/stat-24-7.png'
+import statUsers from './asset/icons/stat-users.png'
+import statHospitals from './asset/icons/stat-hospitals.png'
+import statPartners from './asset/icons/stat-partners.png'
+import pharmacyHome from './asset/icons/pharmacy-home.png'
+import pharmacyTravel from './asset/icons/pharmacy-travel.png'
+import pharmacyKids from './asset/icons/pharmacy-kids.png'
+import pharmacyRoad from './asset/icons/pharmacy-road.png'
+import phoneImg from './asset/phone/phones.png'
+import phoneImg1 from './asset/phone/phone.png'
+import phoneContent from './asset/phone/phone-content.png'
+import phoneBangs from './asset/phone/phone-bangs.png'
+import phoneAitContent from './asset/phone/phone-air-content.png'
 import { useEffect } from 'react';
+import phoneAirQr from './asset/phone/phone-air-qr.png';
+import messageChatIcon from './asset/icons/message-chat-square.png'
+import pieChartIcon from './asset/icons/icon-pie-chart.png'
+import fioIcon from './asset/icons/icons-reg-FIO.png'
+import emailIcon from './asset/icons/icon-mail-reg.png'
+import phoneIcon from './asset/icons/icon-phone-reg.png'
+import logo from './asset/logo.svg'
 
 function App() {
   useEffect(() => {
@@ -45,12 +58,19 @@ function App() {
         <div className="hero-container">
           <div className="hero-content">
             <div className="hero-left">
-              <h1>Технологичный Подход К Вашей Аптечке</h1>
-              <p>Ваш помощник, который упрощает контроль и организацию медицинских запасов.</p>
+              <h1>Технологичный Подход<br />К Вашей Аптечке</h1>
+              <p>Ваш помощник, который упрощает контроль<br />и организацию медицинских запасов.</p>
+              <br/>
               <button className="btn-primary">Зарегистрироваться</button>
             </div>
             <div className="hero-right">
-              <img src={phoneImg1} alt="Phone App" className="hero-phone" />
+              <div className="phone-container">
+                <img src={phoneImg1} alt="Phone App" className="hero-phone" />
+                <img src={phoneContent} alt="Phone Content" className="phone-content" />
+                <img src={phoneAitContent} alt="Phone AIT Content" className="phone-ait-content" />
+                <img src={phoneAirQr} alt="Phone Air QR" className="phone-air-qr" />
+                <img src={phoneBangs} alt="Phone Bangs" className="phone-bangs" />
+              </div>
             </div>
           </div>
         </div>
@@ -86,28 +106,29 @@ function App() {
       {/* Stats Section */}
       <section className="stats-section scroll-animate">
         <div className="stats-container">
-          <h2>Мы предоставляем исключительное<br />удобство <span className="highlight">с учетом потребностей<br />пользователя</span></h2>
           <div className="phones-container">
+            <div className="section-label">Коротко о нас</div>
+            <h2>Мы предоставляем исключительное<br />удобство <span className="highlight">с учетом потребностей<br />пользователя</span></h2>
             <img src={phoneImg} alt="Phones" className="phones-image" />
           </div>
           <div className="stats">
             <div className="stat-item">
-              <div className="stat-icon"><img src={icon11} alt="" /></div>
+              <div className="stat-icon"><img src={stat247} alt="" /></div>
               <div className="stat-number">24/7</div>
               <div className="stat-text">Доступность в любое время</div>
             </div>
             <div className="stat-item">
-              <div className="stat-icon"><img src={icon12} alt="" /></div>
+              <div className="stat-icon"><img src={statUsers} alt="" /></div>
               <div className="stat-number">12.6K +</div>
               <div className="stat-text">Уже используют сервис</div>
             </div>
             <div className="stat-item">
-              <div className="stat-icon"><img src={icon13} alt="" /></div>
+              <div className="stat-icon"><img src={statHospitals} alt="" /></div>
               <div className="stat-number">1200 +</div>
               <div className="stat-text">Больниц сотрудничающих с нами</div>
             </div>
             <div className="stat-item">
-              <div className="stat-icon"><img src={icon14} alt="" /></div>
+              <div className="stat-icon"><img src={statPartners} alt="" /></div>
               <div className="stat-number">220 +</div>
               <div className="stat-text">Партнеров, которые рекомендуют нас</div>
             </div>
@@ -118,51 +139,46 @@ function App() {
       {/* Pharmacy Types Section */}
       <section className="pharmacy-types scroll-animate">
         <div className="pharmacy-container">
-          <h2>Возможность создавать множество аптечек под разными нуждами</h2>
-          <p className="subtitle">Узнать подробнее →</p>
+          <div className="section-label">Аптечки</div>
+          <h2>Возможность создавать множество <br/> аптечек под разными нуждами</h2>
+          <p className="pharmacy-subtitle">Доступно только после регистрации</p>
+          <div className="learn-more-btn">Узнать подробнее →</div>
           <div className="types-grid">
             <div className="type-card">
-              <div className="type-icon"><img src={icon21} alt="" /></div>
+              <div className="type-icon"><img src={pharmacyHome} alt="" /></div>
               <h3>Домашняя аптечка</h3>
               <ul>
                 <li>Обезболивающие</li>
+                <li>Сосудосуживающие</li>
                 <li>Жаропонижающие</li>
-                <li>Противовирусные</li>
                 <li>Для пищеварения</li>
-                <li>Для наружного применения</li>
               </ul>
             </div>
             <div className="type-card">
-              <div className="type-icon"><img src={icon22} alt="" /></div>
-              <h3>Аптечка в путешествия</h3>
+              <div className="type-icon"><img src={pharmacyTravel} alt="" /></div>
+              <h3>Аптечка в путешествие</h3>
               <ul>
                 <li>Обезболивающие</li>
-                <li>Жаропонижающие</li>
-                <li>Противовирусные</li>
                 <li>Для пищеварения</li>
-                <li>Для наружного применения</li>
               </ul>
             </div>
             <div className="type-card">
-              <div className="type-icon"><img src={icon23} alt="" /></div>
+              <div className="type-icon"><img src={pharmacyKids} alt="" /></div>
               <h3>Детская аптечка</h3>
               <ul>
                 <li>Обезболивающие</li>
-                <li>Жаропонижающие</li>
-                <li>Противовирусные</li>
+                <li>Сосудосуживающие</li>
                 <li>Для пищеварения</li>
-                <li>Для наружного применения</li>
+                <li>Жаропонижающие</li>
               </ul>
             </div>
             <div className="type-card">
-              <div className="type-icon"><img src={icon24} alt="" /></div>
+              <div className="type-icon"><img src={pharmacyRoad} alt="" /></div>
               <h3>Дорожная аптечка</h3>
               <ul>
                 <li>Обезболивающие</li>
-                <li>Жаропонижающие</li>
-                <li>Противовирусные</li>
+                <li>Сосудосуживающие</li>
                 <li>Для пищеварения</li>
-                <li>Для наружного применения</li>
               </ul>
             </div>
           </div>
@@ -172,38 +188,37 @@ function App() {
       {/* Benefits Section */}
       <section className="benefits scroll-animate">
         <div className="benefits-container">
-          <h2>Большой выбор возможностей при использовании нашего сервиса</h2>
+          <div className="section-label">Сервис</div>
+          <h2>Большой выбор возможностей при<br />использовании нашего сервиса</h2>
+          <p className="benefits-subtitle">Доступно только после регистрации</p>
           <div className="benefits-content">
             <div className="benefits-left">
-              <h3>Организация аптечки - Ваше здоровье</h3>
-              <p>Мы предоставляем удобный сервис для организации домашней аптечки с возможностью отслеживания сроков годности и автоматическими напоминаниями.</p>
-              <ul>
-                <li>Создавать несколько аптечек</li>
-                <li>Добавлять лекарства с фото</li>
-                <li>Отслеживать сроки годности</li>
-              </ul>
-              <button className="btn-primary">Начать пользоваться</button>
+              <h3>Организация аптечки -<br />Ваше здоровье</h3>
+              <p>Мы предлагаем удобный в организации и в<br />использовании сервис, который будет всегда у вас<br />под рукой в минуту надобности</p>
+              <button className="btn-primary">Начать использовать</button>
             </div>
             <div className="benefits-right">
               <div className="benefit-item">
-                <div className="benefit-icon">📊</div>
-                <h4>Добавление в учет продуктов</h4>
-                <p>Добавляйте лекарства и отслеживайте их количество</p>
+                <div className="benefit-icon"><img src={plusIcon} alt="" /></div>
+                <h4>Добавление и учёт<br />лекарств</h4>
+                <p>Добавляйте лекарства<br />вручную или отсканируйте<br />QR Code на чеке</p>
               </div>
               <div className="benefit-item">
-                <div className="benefit-icon">🔔</div>
-                <h4>Гибкая интеграция</h4>
-                <p>Интегрируйте с другими сервисами здоровья</p>
+                <div className="benefit-icon"><img src={pieChartIcon} alt="" width="32" height="32" /></div>
+                <div>
+                  <h4>Гибкая <br/>категоризация</h4>
+                </div>
               </div>
               <div className="benefit-item">
-                <div className="benefit-icon">👨‍👩‍👧‍👦</div>
-                <h4>Семейный доступ</h4>
-                <p>Делитесь доступом с членами семьи</p>
+                <div className="benefit-icon"><img src={messageChatIcon} alt="" width="32" height="32" /></div>
+                <div>
+                  <h4>Автоматические уведомления</h4>
+                </div>
               </div>
               <div className="benefit-item">
-                <div className="benefit-icon">⚕️</div>
-                <h4>Автоматические уведомления</h4>
-                <p>Получайте напоминания о сроках годности</p>
+                <div className="benefit-icon"><img src={icon2} alt="" /></div>
+                <h4>Семейный<br />доступ</h4>
+                <p>Добавление и учёт лекарств</p>
               </div>
             </div>
           </div>
@@ -213,63 +228,30 @@ function App() {
       {/* Registration Section */}
       <section className="registration scroll-animate">
         <div className="registration-container">
-          <h2>Для использования системы необходимо зарегистрироваться</h2>
+          <div className="section-label">Регистрация</div>
+          <h2>Для использования системы необходимо <br/>зарегистрироваться</h2>
           <p>Заполните все необходимые поля</p>
           <form className="registration-form">
             <div className="form-row">
-              <input type="text" placeholder="ФИО" />
-              <input type="email" placeholder="E-mail" />
-            </div>
-            <div className="form-row">
-              <input type="tel" placeholder="Телефон" />
-              <input type="password" placeholder="Пароль" />
+              <div className="input-wrapper">
+                <div className="input-icon fio"></div>
+                <input type="text" placeholder="ФИО" />
+              </div>
+              <div className="input-wrapper">
+                <div className="input-icon email"></div>
+                <input type="email" placeholder="E-mail" />
+              </div>
+              <div className="input-wrapper">
+                <div className="input-icon phone"></div>
+                <input type="tel" placeholder="Тел" />
+              </div>
             </div>
             <button type="submit" className="btn-primary">Зарегистрироваться</button>
           </form>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="footer">
-        <div className="footer-container">
-          <div className="footer-content">
-            <div className="footer-section">
-              <div className="footer-logo">
-                <img src={icon1} alt="Logo" />
-                <span>ЦИФРОВАЯ АПТЕЧКА</span>
-              </div>
-              <p>Ваш надежный помощник в организации домашней аптечки и заботе о здоровье семьи.</p>
-            </div>
-            <div className="footer-section">
-              <h4>НАВИГАЦИЯ</h4>
-              <ul>
-                <li>Главная</li>
-                <li>Записаться к врачу</li>
-                <li>Каталог</li>
-                <li>Услуги</li>
-                <li>FAQ</li>
-              </ul>
-            </div>
-            <div className="footer-section">
-              <h4>КОНТАКТЫ</h4>
-              <ul>
-                <li>+7 (999) 999 99 99</li>
-                <li>info@aptechka.ru</li>
-                <li>Москва, ул. Примерная, 123</li>
-              </ul>
-            </div>
-            <div className="footer-section">
-              <h4>МЫ В СЕТИ</h4>
-              <div className="social-links">
-                <span>📘</span>
-                <span>📷</span>
-                <span>🐦</span>
-                <span>📺</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
